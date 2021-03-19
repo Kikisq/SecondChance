@@ -1,0 +1,59 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+	<head>
+    	<title>Second Chance's Popup</title>
+    	<style type="text/css">
+      		body {
+        		margin: 10px;
+        		white-space: nowrap;
+      		}
+
+      		h1 {
+        		font-size: 15px;
+      		}
+
+      		#container {
+        		align-items: center;
+        		display: flex;
+        		justify-content: space-between;
+      		}
+    	</style>
+
+    <!-- JavaScript and HTML must be in separate files -->
+    	<script src="popup.js"></script>
+	</head>
+
+	<body>
+    	<h1>Second Chance</h1>
+    	<form id="form">
+    		<fieldset>
+    			<legend>Item to Sell</legend>
+					<!-- Order matters! Label 1st, then textbox -->
+					<label>Name/UPC:</label>
+					<input type="text" id="item" name="item" placeholder="ex: Marvel's Spider-Man" required><br>
+					<!-- <label>Item UPC:</label>
+					<input type="text" name="itemUPC" placeholder="ex: 711719506126"> -->
+      		</fieldset>
+			<fieldset>
+				<legend>Site(s) to Search</legend>
+      				<!-- Order matters! Checkbox 1st, then label -->
+      				<input type="checkbox" id="amazon" name ="amazon" value="amazon">
+					<label for="amazon">Amazon</label><br>
+					<input type="checkbox" id="bestbuy" name ="bestbuy" value="bestbuy">
+					<label for="bestbuy">Best Buy</label><br>
+					<input type="checkbox" id="ebay" name ="site" value="ebay">
+					<label for="ebay">eBay</label><br>
+					<input type="checkbox" id="gamestop" name ="gamestop" value="gamestop">
+					<label for="gamestop">GameStop</label><br>
+					<input type="checkbox" id="poshmark" name ="poshmark" value="poshmark">
+					<label for="poshmark">Poshmark</label><br>
+    		</fieldset>
+    	<input type="submit" id="submit" value="Submit">
+    	</form>
+	</body>
+</html>
